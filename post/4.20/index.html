@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>
-Posts
+Servlet学习笔记
 </title>
 
   
@@ -21,7 +21,7 @@ Posts
 <meta name="generator" content="Hugo 0.58.3" />
 
 
-<link rel="canonical" href="https://zxyzzzzzz.github.io/post/" />
+<link rel="canonical" href="https://zxyzzzzzz.github.io/post/4.20/" />
 <link rel="alternative" href="/index.xml" title="zxy的博客" type="application/atom+xml" />
 
 <link href="/css/semantic.min.css" rel="stylesheet" />
@@ -36,16 +36,73 @@ Posts
     <div class="flipper">
       <section class="front">
         
-<nav class="ui top secondary menu" style="overflow-x: auto">
+<nav class="ui top secondary menu">
   <div class="item">
     <i class="inverted big link bullseye icon dream-flip-toggle" title="Flip it!"></i>
   </div>
   <div class="item">
-    <a href="/"><i class="inverted big link home icon" title="Home"></i></a>
+    <a href="/">
+      <i class="inverted big link home icon" title="Home"></i>
+    </a>
   </div>
 </nav>
  
 <div class="ui centered grid">
+  <div class="fifteen wide mobile fifteen wide tablet eleven wide computer column post-list post-single-main">
+
+    <section class="ui top attached segment">
+      <a class="ui black right corner label" href="javascript:void(0)" onclick="savePostAsImg()">
+        <i class="save icon"></i>
+      </a>
+      <header>
+        <h1 class="ui header">
+          Servlet学习笔记
+          <div class="sub header">@ zxy · Apr 20, 2021 · 1 min read · Update at Apr 20, 2021</div>
+        </h1>
+      </header>
+      <article class="markdown-body" style="margin-top: 2rem; font-size: 1.4rem;"><p><h1>Servlet学习笔记</h1>
+<h3>一、Servlet的前身</h3>
+<b>servlet取代了以往JSP用以将前后端分离 让JSP-&gt;java-&gt;jsp 变为用MVC模式中的controller使用servlet来进行前后端的交互。</b></p>
+
+<p>所谓的MVC模式就是由  M：model，模型  V：View，视图  C：Controller，控制器组成 简单理解M为具体实现的代码，V为前端的页面 C为处理两者之间交互的代码。
+<h3>二、具体使用</h3>
+若想使用servlet需要在web.xml中定义相关配置，如图</p>
+
+<p><img src="https://github.com/zxyzzzzzz/zxyzzzzzz.github.io/tree/master/img/Servlet1.png" alt="Servlet的定义" />
+而Servlet3.0 可以直接在定义的Servlet中写注解 :
+@WebServlet(&ldquo;2.5时url-pattern里的值&rdquo;)
+<h3>三、Servlet的分析</h3>
+<h4>生命周期</h4>
+1.加载<br />
+2.初始化：init()，该方法会在Servlet被加载并实例化的以后执行服务：service()-&gt;doGet(DoPost)<br />
+3.服务(-&gt;doGet()doPost：。调用几次，则执行几次<br />
+4.销毁：def()，Servlet被系统回收时执行卸载<br />
+5.卸载</p>
+
+<p>加载与卸载由编译器处理，我们无需在意，主要需要注意的时初始化会在调用的时候运行一次，也可以预先定义在打开网页调用。</p>
+
+<p><h4>继承关系</h4>
+<img src="https://github.com/zxyzzzzzz/zxyzzzzzz.github.io/tree/master/img/Servlet2.png" alt="Servlet的继承" /><br />
+这种设计模式方便了在需要重写特定方法时不用过多的在意其父类的所有方法，而只用重写需要用到的方法，如DoPost()和DoGet()。</p></article>
+    </section>
+
+    <footer class="ui attached segment dream-tags">
+      
+      
+      <a class="ui label" href="/tags/study" title="study">study</a>
+      
+      
+    </footer>
+
+    
+    <footer class="ui attached segment">
+      zxy
+    </footer>
+    
+
+    
+
+  </div>
   <div class="fifteen wide mobile fifteen wide tablet four wide computer column">
 
     
@@ -109,46 +166,6 @@ Posts
 
 
   </div>
-  <div class="fifteen wide mobile fifteen wide tablet eleven wide computer column post-list">
-    
-    <div class="ui inverted segment">
-    
-      <h2 class="ui header">
-        Posts
-        <div class="ui grey sub header"></div>
-      </h2>
-
-      
-        <h3 class="ui header">2021</h3>
-        <ul>
-          
-          <li><a href="https://zxyzzzzzz.github.io/post/4.20/">Servlet学习笔记</a></li>
-          
-        </ul>
-      
-        <h3 class="ui header">2020</h3>
-        <ul>
-          
-          <li><a href="https://zxyzzzzzz.github.io/post/back/">回来了</a></li>
-          
-        </ul>
-      
-        <h3 class="ui header">2019</h3>
-        <ul>
-          
-          <li><a href="https://zxyzzzzzz.github.io/post/%E7%AE%80%E5%8D%95%E6%89%BE%E8%B7%AF/">简单找路</a></li>
-          
-          <li><a href="https://zxyzzzzzz.github.io/post/%E9%A1%BA%E5%BA%8F%E6%A0%88/">利用顺序栈进行简单的进制转换</a></li>
-          
-          <li><a href="https://zxyzzzzzz.github.io/post/second/">我在安装hugo过程中踩过的坑</a></li>
-          
-          <li><a href="https://zxyzzzzzz.github.io/post/first/">hugo安装博客的笔记</a></li>
-          
-        </ul>
-      
-
-    </div>
-  </div>
 </div>
 
       </section>
@@ -199,7 +216,6 @@ Posts
       
 
       
-        
       
     </section>
 
