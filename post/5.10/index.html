@@ -6,9 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>
-
-tag | 日记
-
+增删改查
 </title>
 
   
@@ -23,7 +21,7 @@ tag | 日记
 <meta name="generator" content="Hugo 0.58.3" />
 
 
-<link rel="canonical" href="https://zxyzzzzzz.github.io/tags/%E6%97%A5%E8%AE%B0/" />
+<link rel="canonical" href="https://zxyzzzzzz.github.io/post/5.10/" />
 <link rel="alternative" href="/index.xml" title="zxy的博客" type="application/atom+xml" />
 
 <link href="/css/semantic.min.css" rel="stylesheet" />
@@ -38,27 +36,101 @@ tag | 日记
     <div class="flipper">
       <section class="front">
         
-
-<nav class="ui top secondary menu" style="overflow-x: auto">
+<nav class="ui top secondary menu">
   <div class="item">
     <i class="inverted big link bullseye icon dream-flip-toggle" title="Flip it!"></i>
   </div>
   <div class="item">
-    <a href="/"><i class="inverted big link home icon" title="Home"></i></a>
-  </div>
-  <div class="item">
-    
-    <i class="disabled inverted big arrow alternate circle outline left icon" title="Previous page"></i>
-    
-  </div>
-  <div class="item">
-    
-    <i class="disabled inverted big arrow alternate circle outline right icon" title="Next page"></i>
-    
+    <a href="/">
+      <i class="inverted big link home icon" title="Home"></i>
+    </a>
   </div>
 </nav>
  
 <div class="ui centered grid">
+  <div class="fifteen wide mobile fifteen wide tablet eleven wide computer column post-list post-single-main">
+
+    <section class="ui top attached segment">
+      <a class="ui black right corner label" href="javascript:void(0)" onclick="savePostAsImg()">
+        <i class="save icon"></i>
+      </a>
+      <header>
+        <h1 class="ui header">
+          增删改查
+          <div class="sub header">@ zxy · May 10, 2021 · 1 min read · Update at May 10, 2021</div>
+        </h1>
+      </header>
+      <article class="markdown-body" style="margin-top: 2rem; font-size: 1.4rem;"><hr />
+
+<hr />
+
+<p><h1>实现增删改查<h1>
+<h3>1.数据库的连接(书写DBHelper类)<h3>
+此处以mysql为例,连接数据库首先需要 用户名 密码 驱动 以及具体连接到的某个库
+<pre>private static String USERNAME=&ldquo;root&rdquo;;<br />
+private static String USERPWD=&ldquo;123456&rdquo;;
+private static String DRIVER=&ldquo;com.mysql.jdbc.cj.Driver&rdquo;;(需要注意的是cj是在mysql 8.0以上版本才加 之前的版本可以不用)
+private static String URL=&ldquo;jdbc:mysql://localhost:3306/<em>数据库的名字</em>&rdquo;;（此处填写的是数据库的端口和数据库信息)、
+</pre>
+用DBHelper获取数据库链接
+<pre>
+static {
+        try {
+            Class.forName(DRIVER);
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+    public static Connection getConn(){//用于返回一个数据库连接对象
+        Connection conn=null;
+        try {
+            conn= DriverManager.getConnection(URL,USERNAME,USERPWD);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return conn; //返回一个数据库连接对象
+    }
+    //打开了数据库最好关闭数据库
+    public static void closeConn(Connection conn) {
+        if (conn!=null){
+            try {
+                conn.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+}
+</pre>
+<h3>2、接下来是查询(书写查询类)</h3>
+<h5>查询的类需要继承之前所写的DBHelper类<br />
+以下是核心代码<h5>
+<pre>
+Connection conn=this.getConn();           //首先是获取数据库连接，调用之前已经做好了的getConn方法
+String sql=&rdquo;<em>这里写sql查询语句</em>&rdquo;;         //书写sql查询语句其中需要从前台读入的条件可以用如 “where name=？”其中？表示之后再来填充
+PreparedStatement cx=conn.prepareStatement(sql);   //将sql语句载入查询中<br />
+cx.setString(*int*，&rdquo;<em>填在？处的内容</em>&rdquo;);    //填充问号 其中int表示的是代表第几个问号，后面的是读取的文字<br />
+ResultSet rs=cx.executeQuery();            //前半段是申明一个结果集存储查询后的结果 后半段是进行查询操作
+//需要注意的是 类似 insert 和 update  应该使用execute()方法 因为这是更新操作 否则会报错
+</pre></p></article>
+    </section>
+
+    <footer class="ui attached segment dream-tags">
+      
+      
+      <a class="ui label" href="/tags/study" title="study">study</a>
+      
+      
+    </footer>
+
+    
+    <footer class="ui attached segment">
+      zxy
+    </footer>
+    
+
+    
+
+  </div>
   <div class="fifteen wide mobile fifteen wide tablet four wide computer column">
 
     
@@ -122,48 +194,6 @@ tag | 日记
 
 
   </div>
-  <div class="fifteen wide mobile fifteen wide tablet eleven wide computer column post-list">
-
-    <div class="ui two stackable cards">
-      
-      
-
-        <article class="card" style="box-shadow: none;">
-  <div class="image">
-    
-    <div class="ui dimmer">
-    
-      <div class="content">
-        <div class="center">
-          
-          <div class="display-content">
-          
-            <a href="https://zxyzzzzzz.github.io/post/back/">
-              
-              <h2 class="ui header" style="color: white;">回来了</h2>
-              
-            </a>
-            <p style="padding: 5px;"></p>
-            <p>@ zxy</p>
-          </div>
-          
-          <div class="ui top right attached black label">1 min read</div>
-          <div class="ui bottom left attached black label">Sep 16, 2020</div>
-          
-        </div>
-      </div>
-    </div>
-    
-    <img src="/img/default1.jpg" alt="回来了">
-    
-  </div>
-</article>
-
-
-      
-    </div>
-
-  </div>
 </div>
 
       </section>
@@ -214,7 +244,6 @@ tag | 日记
       
 
       
-        
       
     </section>
 
