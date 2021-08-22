@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>
+hugo安装博客的笔记
+</title>
+
+  
+  
+  <meta name="author" content="zxy" />
+  <meta name="description" content="" />
+
+
+
+
+
+<meta name="generator" content="Hugo 0.58.3" />
+
+
+<link rel="canonical" href="https://zxyzzzzzz.github.io/post/first/" />
+<link rel="alternative" href="/index.xml" title="zxy的博客" type="application/atom+xml" />
+
+<link href="/css/semantic.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="/css/site.css" />
+<link rel="stylesheet" href="/css/github-markdown.css" />
+
+
+</head>
+
+<body>
+  <div class="flip-container">
+    <div class="flipper">
+      <section class="front">
+        
+<nav class="ui top secondary menu">
+  <div class="item">
+    <i class="inverted big link bullseye icon dream-flip-toggle" title="Flip it!"></i>
+  </div>
+  <div class="item">
+    <a href="/">
+      <i class="inverted big link home icon" title="Home"></i>
+    </a>
+  </div>
+</nav>
+ 
+<div class="ui centered grid">
+  <div class="fifteen wide mobile fifteen wide tablet eleven wide computer column post-list post-single-main">
+
+    <section class="ui top attached segment">
+      <a class="ui black right corner label" href="javascript:void(0)" onclick="savePostAsImg()">
+        <i class="save icon"></i>
+      </a>
+      <header>
+        <h1 class="ui header">
+          hugo安装博客的笔记
+          <div class="sub header">@ zxy · Oct 2, 2019 · 1 min read · Update at Oct 2, 2019</div>
+        </h1>
+      </header>
+      <article class="markdown-body" style="margin-top: 2rem; font-size: 1.4rem;"><hr />
+
+<p>1.以后应该会用到的
+hugo new    post/“要写的博客的名字用.md后缀结尾” //新建文章
+hugo server -t “主题名称”&ndash;buildDrafts //在本地浏览器查看网页
+git remote add origin <a href="https://github.com/zxyzzzzzz/zxyzzzzzz.github.io.git">https://github.com/zxyzzzzzz/zxyzzzzzz.github.io.git</a>
+git push -u ori master  //这两条是推送到服务器上</p>
+
+<p>2重装的时候会用吧
+hugo new site “站点名称”//生成一个新站点
+hugo &ndash;theme=&ldquo;主题名称&rdquo; &ndash;baseUrl=&ldquo;https://&ldquo;站点名称&rdquo;.github.io/&rdquo; &ndash;buildDrafts</p>
+
+<p>上传流程
+首先 hugo &ndash;theme=dream &ndash;baseUrl=&ldquo;<a href="https://zxyzzzzzz.github.io/&quot;">https://zxyzzzzzz.github.io/&quot;</a> &ndash;buildDrafts
+此时public文件夹创立了 我们需要进入 cd public
+进入后 git init (初始化)
+然后git add .（更新）
+接着 git commit -m &ldquo;第n次提交&rdquo;</p>
+
+<p>git remote add origin <a href="https://github.com/zxyzzzzzz/zxyzzzzzz.github.io.git">https://github.com/zxyzzzzzz/zxyzzzzzz.github.io.git</a>
+此时就可以用上传到服务器上了</p>
+
+<p>git push -u origin master</p>
+
+<p>二次上交有一个比较简单适合小白的方法就是把public删掉然后重新弄一个出来直接拖到库里覆盖</p>
+
+<p>hugo &ndash;theme=&ldquo;主题名称&rdquo; &ndash;baseUrl=&ldquo;https://&ldquo;站点名称&rdquo;.github.io/&rdquo; &ndash;buildDrafts</p></article>
+    </section>
+
+    <footer class="ui attached segment dream-tags">
+      
+      
+      <a class="ui label" href="/tags/study" title="Study">Study</a>
+      
+      
+    </footer>
+
+    
+    <footer class="ui attached segment">
+      zxy
+    </footer>
+    
+
+    
+
+  </div>
+  <div class="fifteen wide mobile fifteen wide tablet four wide computer column">
+
+    
+<section class="ui top attached center aligned inverted segment">
+
+  <a id="tag-category-pop" class="ui right ribbon label" style="width: 1px;">
+    <i class="bars icon" title="Show menu"></i>
+  </a>
+
+  <div class="ui small circular image" style="margin-top: 1rem;">
+    
+    <img src="/img/avatar-ex.jpg">
+    
+  </div>
+  
+  <h3 class="ui inverted header">
+  zxyzxsheep<div class="sub header">不乱于心 不困于情 不念过往 不畏将来</div>
+  </h3>
+
+  
+  <div class="ui inverted horizontal list">
+  
+    
+    <a class="item" href="/post">
+      <i class="archive icon" title="Archives"></i>
+    </a>
+    
+    <a class="item" href="/tags">
+      <i class="tags icon" title="All Tags"></i>
+    </a>
+    <a class="item" href="/categories">
+      <i class="cube icon" title="All Categories"></i>
+    </a>
+  </div>
+</section>
+
+
+
+<section class="ui attached center aligned inverted segment dream-header-tags dream-tags">
+
+  
+  <a class="ui label" href="/tags/study" title="study">study</a>
+  
+  <a class="ui label" href="/tags/%E6%97%A5%E8%AE%B0" title="日记">日记</a>
+  
+  <a class="ui label" href="/tags/%E7%AE%97%E6%B3%95" title="算法">算法</a>
+  
+</section>
+
+
+
+
+
+<section class="ui bottom attached center aligned inverted segment">
+
+    
+    <p>© 2021 zxy的博客</p>
+    
+    <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with theme <a href="https://github.com/g1eny0ung/hugo-theme-dream" target="_blank">Dream</a>.</p>
+</section>
+
+
+  </div>
+</div>
+
+      </section>
+      <section class="back">
+        <nav class="ui top secondary menu" style="overflow-x: auto">
+  <div class="item">
+    <i class="inverted big link bullseye icon dream-flip-toggle" title="Flip it!"></i>
+  </div>
+  
+  
+  
+  
+  
+</nav>
+
+<div class="ui centered grid about">
+  <div class="fifteen wide mobile fifteen wide tablet fifteen wide computer column">
+
+    <section class="ui stacked segments">
+      
+      <header class="ui inverted segment">
+      
+        <h2 class="ui header">
+          About
+        </h2>
+      </header>
+
+      
+      <article class="ui inverted segment markdown-body">
+      
+        <div class="ui stackable three column grid">
+          <div class="column">
+              
+          </div>
+          <div class="column">
+              
+          </div>
+          <div class="column">
+              
+          </div>
+        </div>
+      </article>
+
+      
+      <footer class="ui secondary segment">
+        zxy
+      </footer>
+      
+
+      
+      
+    </section>
+
+  </div>
+</div>
+
+      </section>
+    </div>
+  </div>
+
+  
+<script src="/js/jquery.min.js"></script>
+<script src="/js/semantic.min.js"></script>
+<script src="/js/html2canvas.min.js"></script>
+<script src="/js/bg.js"></script>
+<script src="/js/site.js"></script>
+
+
+
+</body>
+
+</html>

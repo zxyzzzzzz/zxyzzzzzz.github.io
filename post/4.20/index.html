@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>
+Servlet学习笔记
+</title>
+
+  
+  
+  <meta name="author" content="zxy" />
+  <meta name="description" content="" />
+
+
+
+
+
+<meta name="generator" content="Hugo 0.58.3" />
+
+
+<link rel="canonical" href="https://zxyzzzzzz.github.io/post/4.20/" />
+<link rel="alternative" href="/index.xml" title="zxy的博客" type="application/atom+xml" />
+
+<link href="/css/semantic.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="/css/site.css" />
+<link rel="stylesheet" href="/css/github-markdown.css" />
+
+
+</head>
+
+<body>
+  <div class="flip-container">
+    <div class="flipper">
+      <section class="front">
+        
+<nav class="ui top secondary menu">
+  <div class="item">
+    <i class="inverted big link bullseye icon dream-flip-toggle" title="Flip it!"></i>
+  </div>
+  <div class="item">
+    <a href="/">
+      <i class="inverted big link home icon" title="Home"></i>
+    </a>
+  </div>
+</nav>
+ 
+<div class="ui centered grid">
+  <div class="fifteen wide mobile fifteen wide tablet eleven wide computer column post-list post-single-main">
+
+    <section class="ui top attached segment">
+      <a class="ui black right corner label" href="javascript:void(0)" onclick="savePostAsImg()">
+        <i class="save icon"></i>
+      </a>
+      <header>
+        <h1 class="ui header">
+          Servlet学习笔记
+          <div class="sub header">@ zxy · Apr 20, 2021 · 1 min read · Update at Apr 20, 2021</div>
+        </h1>
+      </header>
+      <article class="markdown-body" style="margin-top: 2rem; font-size: 1.4rem;"><p><h1>Servlet学习笔记</h1>
+<h3>一、Servlet的前身</h3>
+<b>servlet取代了以往JSP用以将前后端分离 让JSP-&gt;java-&gt;jsp 变为用MVC模式中的controller使用servlet来进行前后端的交互。</b></p>
+
+<p>所谓的MVC模式就是由  M：model，模型  V：View，视图  C：Controller，控制器组成 简单理解M为具体实现的代码，V为前端的页面 C为处理两者之间交互的代码。
+<h3>二、具体使用</h3>
+若想使用servlet需要在web.xml中定义相关配置，如图</p>
+
+<p><img src="https://github.com/zxyzzzzzz/zxyzzzzzz.github.io/blob/master/img/Servlet1.png" alt="image" />
+而Servlet3.0 可以直接在定义的Servlet中写注解 :
+@WebServlet(&ldquo;2.5时url-pattern里的值&rdquo;)
+<h3>三、Servlet的分析</h3>
+<h4>生命周期</h4>
+1.加载<br />
+2.初始化：init()，该方法会在Servlet被加载并实例化的以后执行服务：service()-&gt;doGet(DoPost)<br />
+3.服务(-&gt;doGet()doPost：。调用几次，则执行几次<br />
+4.销毁：def()，Servlet被系统回收时执行卸载<br />
+5.卸载</p>
+
+<p>加载与卸载由编译器处理，我们无需在意，主要需要注意的时初始化会在调用的时候运行一次，也可以预先定义在打开网页调用。</p>
+
+<p><h4>继承关系</h4>
+<img src="https://github.com/zxyzzzzzz/zxyzzzzzz.github.io/blob/master/img/Servlet2.png" alt="Servlet的继承" /><br />
+这种设计模式方便了在需要重写特定方法时不用过多的在意其父类的所有方法，而只用重写需要用到的方法，如DoPost()和DoGet()。</p></article>
+    </section>
+
+    <footer class="ui attached segment dream-tags">
+      
+      
+      <a class="ui label" href="/tags/study" title="study">study</a>
+      
+      
+    </footer>
+
+    
+    <footer class="ui attached segment">
+      zxy
+    </footer>
+    
+
+    
+
+  </div>
+  <div class="fifteen wide mobile fifteen wide tablet four wide computer column">
+
+    
+<section class="ui top attached center aligned inverted segment">
+
+  <a id="tag-category-pop" class="ui right ribbon label" style="width: 1px;">
+    <i class="bars icon" title="Show menu"></i>
+  </a>
+
+  <div class="ui small circular image" style="margin-top: 1rem;">
+    
+    <img src="/img/avatar-ex.jpg">
+    
+  </div>
+  
+  <h3 class="ui inverted header">
+  zxyzxsheep<div class="sub header">不乱于心 不困于情 不念过往 不畏将来</div>
+  </h3>
+
+  
+  <div class="ui inverted horizontal list">
+  
+    
+    <a class="item" href="/post">
+      <i class="archive icon" title="Archives"></i>
+    </a>
+    
+    <a class="item" href="/tags">
+      <i class="tags icon" title="All Tags"></i>
+    </a>
+    <a class="item" href="/categories">
+      <i class="cube icon" title="All Categories"></i>
+    </a>
+  </div>
+</section>
+
+
+
+<section class="ui attached center aligned inverted segment dream-header-tags dream-tags">
+
+  
+  <a class="ui label" href="/tags/study" title="study">study</a>
+  
+  <a class="ui label" href="/tags/%E6%97%A5%E8%AE%B0" title="日记">日记</a>
+  
+  <a class="ui label" href="/tags/%E7%AE%97%E6%B3%95" title="算法">算法</a>
+  
+</section>
+
+
+
+
+
+<section class="ui bottom attached center aligned inverted segment">
+
+    
+    <p>© 2021 zxy的博客</p>
+    
+    <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with theme <a href="https://github.com/g1eny0ung/hugo-theme-dream" target="_blank">Dream</a>.</p>
+</section>
+
+
+  </div>
+</div>
+
+      </section>
+      <section class="back">
+        <nav class="ui top secondary menu" style="overflow-x: auto">
+  <div class="item">
+    <i class="inverted big link bullseye icon dream-flip-toggle" title="Flip it!"></i>
+  </div>
+  
+  
+  
+  
+  
+</nav>
+
+<div class="ui centered grid about">
+  <div class="fifteen wide mobile fifteen wide tablet fifteen wide computer column">
+
+    <section class="ui stacked segments">
+      
+      <header class="ui inverted segment">
+      
+        <h2 class="ui header">
+          About
+        </h2>
+      </header>
+
+      
+      <article class="ui inverted segment markdown-body">
+      
+        <div class="ui stackable three column grid">
+          <div class="column">
+              
+          </div>
+          <div class="column">
+              
+          </div>
+          <div class="column">
+              
+          </div>
+        </div>
+      </article>
+
+      
+      <footer class="ui secondary segment">
+        zxy
+      </footer>
+      
+
+      
+      
+    </section>
+
+  </div>
+</div>
+
+      </section>
+    </div>
+  </div>
+
+  
+<script src="/js/jquery.min.js"></script>
+<script src="/js/semantic.min.js"></script>
+<script src="/js/html2canvas.min.js"></script>
+<script src="/js/bg.js"></script>
+<script src="/js/site.js"></script>
+
+
+
+</body>
+
+</html>

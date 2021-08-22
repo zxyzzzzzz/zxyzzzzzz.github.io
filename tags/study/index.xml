@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>study on zxy的博客</title>
+    <link>https://zxyzzzzzz.github.io/tags/study/</link>
+    <description>Recent content in study on zxy的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>zxy</copyright>
+    <lastBuildDate>Mon, 10 May 2021 23:38:49 +0800</lastBuildDate>
+    
+	<atom:link href="https://zxyzzzzzz.github.io/tags/study/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>增删改查</title>
+      <link>https://zxyzzzzzz.github.io/post/5.10/</link>
+      <pubDate>Mon, 10 May 2021 23:38:49 +0800</pubDate>
+      
+      <guid>https://zxyzzzzzz.github.io/post/5.10/</guid>
+      <description>&lt;hr /&gt;
+
+&lt;hr /&gt;</description>
+    </item>
+    
+    <item>
+      <title>Servlet学习笔记</title>
+      <link>https://zxyzzzzzz.github.io/post/4.20/</link>
+      <pubDate>Tue, 20 Apr 2021 17:32:47 +0800</pubDate>
+      
+      <guid>https://zxyzzzzzz.github.io/post/4.20/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hugo安装博客的笔记</title>
+      <link>https://zxyzzzzzz.github.io/post/first/</link>
+      <pubDate>Wed, 02 Oct 2019 16:26:16 +0800</pubDate>
+      
+      <guid>https://zxyzzzzzz.github.io/post/first/</guid>
+      <description>&lt;hr /&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

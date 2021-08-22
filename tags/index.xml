@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on zxy的博客</title>
+    <link>https://zxyzzzzzz.github.io/tags/</link>
+    <description>Recent content in Tags on zxy的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>zxy</copyright>
+    <lastBuildDate>Mon, 10 May 2021 23:38:49 +0800</lastBuildDate>
+    
+	<atom:link href="https://zxyzzzzzz.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>study</title>
+      <link>https://zxyzzzzzz.github.io/tags/study/</link>
+      <pubDate>Mon, 10 May 2021 23:38:49 +0800</pubDate>
+      
+      <guid>https://zxyzzzzzz.github.io/tags/study/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>日记</title>
+      <link>https://zxyzzzzzz.github.io/tags/%E6%97%A5%E8%AE%B0/</link>
+      <pubDate>Wed, 16 Sep 2020 14:47:47 +0800</pubDate>
+      
+      <guid>https://zxyzzzzzz.github.io/tags/%E6%97%A5%E8%AE%B0/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>算法</title>
+      <link>https://zxyzzzzzz.github.io/tags/%E7%AE%97%E6%B3%95/</link>
+      <pubDate>Thu, 17 Oct 2019 13:48:57 +0800</pubDate>
+      
+      <guid>https://zxyzzzzzz.github.io/tags/%E7%AE%97%E6%B3%95/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
