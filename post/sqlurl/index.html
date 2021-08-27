@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>
-回来了
+连接sql字符串的一些参数
 </title>
 
   
@@ -21,7 +21,7 @@
 <meta name="generator" content="Hugo 0.58.3" />
 
 
-<link rel="canonical" href="https://zxyzzzzzz.github.io/post/back/" />
+<link rel="canonical" href="https://zxyzzzzzz.github.io/post/sqlurl/" />
 <link rel="alternative" href="/index.xml" title="zxy的博客" type="application/atom+xml" />
 
 <link href="/css/semantic.min.css" rel="stylesheet" />
@@ -56,17 +56,144 @@
       </a>
       <header>
         <h1 class="ui header">
-          回来了
-          <div class="sub header">@ zxy · Sep 16, 2020 · 1 min read · Update at Sep 16, 2020</div>
+          连接sql字符串的一些参数
+          <div class="sub header">@ zxy · Aug 27, 2021 · 1 min read · Update at Aug 27, 2021</div>
         </h1>
       </header>
-      <article class="markdown-body" style="margin-top: 2rem; font-size: 1.4rem;"><p>懒狗半年，人还活着，一切安好。</p></article>
+      <article class="markdown-body" style="margin-top: 2rem; font-size: 1.4rem;"><p><strong>所遇问题：数据库6.0以上需要配置useSSL=false/true于url中，用于服务器的安全连接，配置加上即可</strong></p>
+
+<p>附上在URL中请求参数的表</p>
+
+<table>
+<thead>
+<tr>
+<th>后缀追加参数</th>
+<th>说明</th>
+<th>默认值</th>
+<th>版本要求</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>autoReconnect</td>
+<td>当数据库连接异常中断时，是否自动重新连接？</td>
+<td>FALSE</td>
+<td>1.1</td>
+</tr>
+
+<tr>
+<td>autoReconnectForPools</td>
+<td>是否使用针对数据库连接池的重连策略</td>
+<td>FALSE</td>
+<td>3.1.3</td>
+</tr>
+
+<tr>
+<td>allowMultiQueries</td>
+<td>是否允许批量更新（一般和 rewriteBatchedStatements 参数一起用）</td>
+<td>FALSE</td>
+<td></td>
+</tr>
+
+<tr>
+<td>characterEncoding</td>
+<td>当useUnicode设置为true时，指定字符编码。比如可设置为gb2312或gbk</td>
+<td>FALSE</td>
+<td>1.1</td>
+</tr>
+
+<tr>
+<td>connectTimeout</td>
+<td>和数据库服务器建立socket连接时的超时，单位：毫秒。 0表示永不超时，适用于JDK 1.4及更高版本</td>
+<td></td>
+<td>3.0.1</td>
+</tr>
+
+<tr>
+<td>failOverReadOnly</td>
+<td>自动重连成功后，连接是否设置为只读？</td>
+<td>TRUE</td>
+<td>3.0.12</td>
+</tr>
+
+<tr>
+<td>initialTimeout autoReconnect</td>
+<td>设置为true时，两次重连之间的时间间隔，单位：秒</td>
+<td>2</td>
+<td>1.1</td>
+</tr>
+
+<tr>
+<td>maxReconnects autoReconnect</td>
+<td>设置为true时，重试连接的次数</td>
+<td>3</td>
+<td>1.1</td>
+</tr>
+
+<tr>
+<td>password</td>
+<td>用户密码（用于连接数据库）</td>
+<td></td>
+<td>all</td>
+</tr>
+
+<tr>
+<td>rewriteBatchedStatements</td>
+<td>批处理（一般和 allowMultiQueries 参数一起用）</td>
+<td></td>
+<td>FALSE</td>
+</tr>
+
+<tr>
+<td>socketTimeout socket</td>
+<td>操作（读写）超时，单位：毫秒。 0表示永不超时</td>
+<td>0</td>
+<td>3.0.1</td>
+</tr>
+
+<tr>
+<td>serverTimezone</td>
+<td>时区设置（A8项目需要设置参数为UTC）</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td>user</td>
+<td>数据库用户名（用于连接数据库）</td>
+<td></td>
+<td>all</td>
+</tr>
+
+<tr>
+<td>useSSL</td>
+<td>高版本需要指明是否进行SSL连接</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td>useUnicode</td>
+<td>是否使用Unicode字符集，如果有参数characterEncoding设置，该参数就需要等于true</td>
+<td>FALSE</td>
+<td>1.1</td>
+</tr>
+
+<tr>
+<td>zeroDateTimeBehavior</td>
+<td>日期数据处理（三个属性值：exception抛SQL异常、convertToNull将日期转换为NULL、round替换成最近的日期）</td>
+<td>exception</td>
+<td></td>
+</tr>
+</tbody>
+</table></article>
     </section>
 
     <footer class="ui attached segment dream-tags">
       
       
-      <a class="ui label" href="/tags/%E6%97%A5%E8%AE%B0" title="日记">日记</a>
+      <a class="ui label" href="/tags/%E7%AC%94%E8%AE%B0" title="笔记">笔记</a>
       
       
     </footer>

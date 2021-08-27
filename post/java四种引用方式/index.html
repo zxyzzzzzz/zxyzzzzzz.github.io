@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>
-回来了
+JAVA四种引用方式
 </title>
 
   
@@ -21,7 +21,7 @@
 <meta name="generator" content="Hugo 0.58.3" />
 
 
-<link rel="canonical" href="https://zxyzzzzzz.github.io/post/back/" />
+<link rel="canonical" href="https://zxyzzzzzz.github.io/post/java%E5%9B%9B%E7%A7%8D%E5%BC%95%E7%94%A8%E6%96%B9%E5%BC%8F/" />
 <link rel="alternative" href="/index.xml" title="zxy的博客" type="application/atom+xml" />
 
 <link href="/css/semantic.min.css" rel="stylesheet" />
@@ -56,17 +56,33 @@
       </a>
       <header>
         <h1 class="ui header">
-          回来了
-          <div class="sub header">@ zxy · Sep 16, 2020 · 1 min read · Update at Sep 16, 2020</div>
+          JAVA四种引用方式
+          <div class="sub header">@ zxy · Aug 27, 2021 · 1 min read · Update at Aug 27, 2021</div>
         </h1>
       </header>
-      <article class="markdown-body" style="margin-top: 2rem; font-size: 1.4rem;"><p>懒狗半年，人还活着，一切安好。</p></article>
+      <article class="markdown-body" style="margin-top: 2rem; font-size: 1.4rem;"><h2 id="java的四级引用">java的四级引用</h2>
+
+<h3 id="强引用-strong-reference">强引用（Strong reference）</h3>
+
+<p>类似于Date date=new Date() data就是一个对象的强引用，他与其他引用不同的是，假如对象 A 中包含了一个对象 B 的强引用，那么一般情况下，对象 B 的存活时间就不会短于对象 A。如果对象 A 没有显式的把对象 B 的引用设为 null 的话，就只有当对象 A 被垃圾回收之后，对象 B 才不再有引用指向它，才可能获得被垃圾回收的机会。</p>
+
+<h3 id="软引用-soft-reference">软引用（soft reference)</h3>
+
+<p>弱于强引用，当内存不足时，GC会释放哪些只被软引用所指向的对象，如果全部释放完这些对象之后内存还不足，才会抛出outOFmemory错误，软引用适合用于创建缓存，如创建图片缓存dataRef= new SoftReference<byte[]>(new byte[0])，</p>
+
+<h3 id="弱引用-weak-reference">弱引用（weak reference）</h3>
+
+<p>在强度上弱于软引用，通过类WeakReference来表示。它的作用是引用一个对象，但是并不阻止该对象被回收。如果使用一个强引用的话，只要该引用存在，那么被引用的对象是不能被回收的。弱引用则没有这个问题。在垃圾回收器运行的时候，如果一个对象的所有引用都是弱引用的话，该对象会被回收。</p>
+
+<h3 id="幽灵引用-phantom-reference">幽灵引用（phantom reference）</h3>
+
+<p>在介绍幽灵引用之前，要先介绍 Java 提供的<a href="http://java.sun.com/docs/books/jls/third_edition/html/execution.html#44748">对象终止化机制</a>（finalization）。在Object 类里面有个<a href="http://download.oracle.com/javase/6/docs/api/java/lang/Object.html#finalize()"> finalize </a>方法，其设计的初衷是在一个对象被真正回收之前，可以用来执行一些清理的工作。因为 Java 并没有提供类似 C++ 的析构函数一样的机制，就通过 finalize 方法来实现。但是问题在于垃圾回收器的运行时间是不固定的，所以这些清理工作的实际运行时间也是不能预知的。幽灵引用可以解决这个问题。在创建幽灵引用<a href="http://download.oracle.com/javase/6/docs/api/java/lang/ref/PhantomReference.html"> PhantomReference </a>的时候必须要指定一个引用队列。当一个对象的 finalize 方法已经被调用了之后，这个对象的幽灵引用会被加入到队列中。通过检查该队列里面的内容就知道一个对象是不是已经准备要被回收了。</p></article>
     </section>
 
     <footer class="ui attached segment dream-tags">
       
       
-      <a class="ui label" href="/tags/%E6%97%A5%E8%AE%B0" title="日记">日记</a>
+      <a class="ui label" href="/tags/%E7%AC%94%E8%AE%B0" title="笔记">笔记</a>
       
       
     </footer>

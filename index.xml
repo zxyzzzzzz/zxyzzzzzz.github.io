@@ -7,10 +7,28 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>zxy</copyright>
-    <lastBuildDate>Mon, 10 May 2021 23:38:49 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 27 Aug 2021 16:39:29 +0800</lastBuildDate>
     
 	<atom:link href="https://zxyzzzzzz.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>连接sql字符串的一些参数</title>
+      <link>https://zxyzzzzzz.github.io/post/sqlurl/</link>
+      <pubDate>Fri, 27 Aug 2021 16:39:29 +0800</pubDate>
+      
+      <guid>https://zxyzzzzzz.github.io/post/sqlurl/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>JAVA四种引用方式</title>
+      <link>https://zxyzzzzzz.github.io/post/java%E5%9B%9B%E7%A7%8D%E5%BC%95%E7%94%A8%E6%96%B9%E5%BC%8F/</link>
+      <pubDate>Fri, 27 Aug 2021 16:38:52 +0800</pubDate>
+      
+      <guid>https://zxyzzzzzz.github.io/post/java%E5%9B%9B%E7%A7%8D%E5%BC%95%E7%94%A8%E6%96%B9%E5%BC%8F/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>增删改查</title>
