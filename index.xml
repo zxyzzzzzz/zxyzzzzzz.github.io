@@ -7,10 +7,28 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>zxy</copyright>
-    <lastBuildDate>Fri, 27 Aug 2021 16:39:29 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 12 Sep 2021 20:32:56 +0800</lastBuildDate>
     
 	<atom:link href="https://zxyzzzzzz.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>索引优化</title>
+      <link>https://zxyzzzzzz.github.io/post/%E7%B4%A2%E5%BC%95%E4%BC%98%E5%8C%96/</link>
+      <pubDate>Sun, 12 Sep 2021 20:32:56 +0800</pubDate>
+      
+      <guid>https://zxyzzzzzz.github.io/post/%E7%B4%A2%E5%BC%95%E4%BC%98%E5%8C%96/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>索引基础</title>
+      <link>https://zxyzzzzzz.github.io/post/%E7%B4%A2%E5%BC%95%E5%9F%BA%E7%A1%80/</link>
+      <pubDate>Sun, 12 Sep 2021 20:32:56 +0800</pubDate>
+      
+      <guid>https://zxyzzzzzz.github.io/post/%E7%B4%A2%E5%BC%95%E5%9F%BA%E7%A1%80/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>连接sql字符串的一些参数</title>

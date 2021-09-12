@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>
+索引优化
+</title>
+
+  
+  
+  <meta name="author" content="zxy" />
+  <meta name="description" content="" />
+
+
+
+
+
+<meta name="generator" content="Hugo 0.58.3" />
+
+
+<link rel="canonical" href="https://zxyzzzzzz.github.io/post/%E7%B4%A2%E5%BC%95%E4%BC%98%E5%8C%96/" />
+<link rel="alternative" href="/index.xml" title="zxy的博客" type="application/atom+xml" />
+
+<link href="/css/semantic.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="/css/site.css" />
+<link rel="stylesheet" href="/css/github-markdown.css" />
+
+
+</head>
+
+<body>
+  <div class="flip-container">
+    <div class="flipper">
+      <section class="front">
+        
+<nav class="ui top secondary menu">
+  <div class="item">
+    <i class="inverted big link bullseye icon dream-flip-toggle" title="Flip it!"></i>
+  </div>
+  <div class="item">
+    <a href="/">
+      <i class="inverted big link home icon" title="Home"></i>
+    </a>
+  </div>
+</nav>
+ 
+<div class="ui centered grid">
+  <div class="fifteen wide mobile fifteen wide tablet eleven wide computer column post-list post-single-main">
+
+    <section class="ui top attached segment">
+      <a class="ui black right corner label" href="javascript:void(0)" onclick="savePostAsImg()">
+        <i class="save icon"></i>
+      </a>
+      <header>
+        <h1 class="ui header">
+          索引优化
+          <div class="sub header">@ zxy · Sep 12, 2021 · 1 min read · Update at Sep 12, 2021</div>
+        </h1>
+      </header>
+      <article class="markdown-body" style="margin-top: 2rem; font-size: 1.4rem;"><h3 id="索引优化">索引优化</h3>
+
+<h4 id="一-创建索引">一、创建索引</h4>
+
+<p>在执行CREATE TABLE语句时可以创建索引，也可以单独用CREATE INDEX或ALTER TABLE来为表增加索引。</p>
+
+<p><strong>1．ALTER TABLE</strong></p>
+
+<p>ALTER TABLE用来创建普通索引、UNIQUE索引或PRIMARY KEY索引。</p>
+
+<p>ALTER TABLE table_name ADD INDEX index_name (column_list)</p>
+
+<p>ALTER TABLE table_name ADD UNIQUE (column_list)</p>
+
+<p>ALTER TABLE table_name ADD PRIMARY KEY (column_list)</p>
+
+<p><strong>2．CREATE INDEX</strong></p>
+
+<p>CREATE INDEX可对表增加普通索引或UNIQUE索引。</p>
+
+<p>CREATE INDEX index_name ON table_name (column_list)</p>
+
+<p>CREATE UNIQUE INDEX index_name ON table_name (column_list)</p>
+
+<p>table_name、index_name和column_list具有与ALTER TABLE语句中相同的含义，索引名不可选。另外，不能用CREATE INDEX语句创建PRIMARY KEY索引</p>
+
+<p>同时建立索引后，查询索引定义的数据列和where后的数据列相等或小于，是可以用到索引的，但是稍微多一个非索引字段会影响其查询的性能。</p>
+
+<h4 id="二-删除索引">二、删除索引</h4>
+
+<p>可利用ALTER TABLE或DROP INDEX语句来删除索引。类似于CREATE INDEX语句，DROP INDEX可以在ALTER TABLE内部作为一条语句处理，语法如下。</p>
+
+<p>DROP INDEX index_name ON talbe_name</p>
+
+<p>ALTER TABLE table_name DROP INDEX index_name</p>
+
+<p>ALTER TABLE table_name DROP PRIMARY KEY</p>
+
+<h4 id="三-查看索引">三、查看索引</h4>
+
+<p>show index from tablename;</p>
+
+<p>show keys from tablename;</p>
+
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>用途</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Table</td>
+<td>表的名称。</td>
+</tr>
+
+<tr>
+<td>Non_unique</td>
+<td>如果索引不能包括重复词，则为0。如果可以，则为1。</td>
+</tr>
+
+<tr>
+<td>Key_name</td>
+<td>索引的名称。</td>
+</tr>
+
+<tr>
+<td>Seq_in_index</td>
+<td>索引中的列序列号，从1开始。</td>
+</tr>
+
+<tr>
+<td>Column_name</td>
+<td>列名称。</td>
+</tr>
+
+<tr>
+<td>Collation</td>
+<td>列以什么方式存储在索引中。在MySQL中，有值‘A’（升序）或NULL（无分类）。</td>
+</tr>
+
+<tr>
+<td>Cardinality</td>
+<td>索引中唯一值的数目的估计值。通过运行ANALYZE TABLE或myisamchk -a可以更新。基数根据被存储为整数的统计数据来计数，所以即使对于小型表，该值也没有必要是精确的。基数越大，当进行联合时，MySQL使用该索引的机会就越大。</td>
+</tr>
+
+<tr>
+<td>Sub_part</td>
+<td>如果列只是被部分地编入索引，则为被编入索引的字符的数目。如果整列被编入索引，则为NULL。</td>
+</tr>
+
+<tr>
+<td>Packed</td>
+<td>指示关键字如何被压缩。如果没有被压缩，则为NULL。</td>
+</tr>
+
+<tr>
+<td>Null</td>
+<td>如果列含有NULL，则含有YES。如果没有，则该列含有NO。</td>
+</tr>
+
+<tr>
+<td>Index_type</td>
+<td>用过的索引方法（BTREE, FULLTEXT, HASH, RTREE）。</td>
+</tr>
+
+<tr>
+<td>Comment</td>
+<td>注释</td>
+</tr>
+</tbody>
+</table>
+
+<p>说个题外话，mysql中有utf8和utf8mb4两种编码，在mysql中请大家忘记utf8，永远使用utf8mb4。这是mysql的一个遗留问题，mysql中的utf8最多只能支持3bytes长度的字符编码，对于一些需要占据4bytes的文字，mysql的utf8就不支持了，要使用utf8mb4才行。</p>
+
+<h4 id="五-索引失效">五、索引失效</h4>
+
+<p>1、索引遵循最左前缀法则，从最左边开始检索且逐字检索，如果索引多列也不会跳过列，如果组合索引未带上从头开始的列则不会进入索引，即索引失效，“带头大哥不能死，中间兄弟不能断”。</p>
+
+<p>2、对于索引列上做任何操作（计算、函数、（自动 or 手动）类型转换），会导致索引失效而转向全表扫描。</p>
+
+<p>3、使用不等于（！=， 或者&lt;&gt; ，is null，is not null  ）时会导致无法使用索引进行全表搜索。</p>
+
+<p>4、用like查询时，若以通配符开头‘%xxx%’ 也会引起索引失效，最好是在右边写通配符，如果生产环境中不得不加，则可以考虑覆盖索引。</p>
+
+<p>5、varchar类型绝对不能少写单引号，同样会引起索引失效，<strong><u>在开发中是重罪</u></strong>，因为mysql会隐式的做一次数据转换再来查找。</p>
+
+<p>6、少用or，用它来连接会索引失效。</p>
+
+<h4 id="六-索引优化的流程">六、索引优化的流程</h4>
+
+<p>1、观察、至少一天，如从日志中查看运行慢的SQL，并定义一个阈值，比如超过3秒的就是慢sql把他抓取出来。</p>
+
+<p>2、用explain进行慢sql的分析</p>
+
+<p>3、使用show profile进行性能上的分析。</p>
+
+<p>4、针对第三步发现的问题进行数据库服务器的参数调优。</p></article>
+    </section>
+
+    <footer class="ui attached segment dream-tags">
+      
+      
+      <a class="ui label" href="/tags/%E7%AC%94%E8%AE%B0" title="笔记">笔记</a>
+      
+      
+    </footer>
+
+    
+    <footer class="ui attached segment">
+      zxy
+    </footer>
+    
+
+    
+
+  </div>
+  <div class="fifteen wide mobile fifteen wide tablet four wide computer column">
+
+    
+<section class="ui top attached center aligned inverted segment">
+
+  <a id="tag-category-pop" class="ui right ribbon label" style="width: 1px;">
+    <i class="bars icon" title="Show menu"></i>
+  </a>
+
+  <div class="ui small circular image" style="margin-top: 1rem;">
+    
+    <img src="/img/avatar-ex.jpg">
+    
+  </div>
+  
+  <h3 class="ui inverted header">
+  zxyzxsheep<div class="sub header">不乱于心 不困于情 不念过往 不畏将来</div>
+  </h3>
+
+  
+  <div class="ui inverted horizontal list">
+  
+    
+    <a class="item" href="/post">
+      <i class="archive icon" title="Archives"></i>
+    </a>
+    
+    <a class="item" href="/tags">
+      <i class="tags icon" title="All Tags"></i>
+    </a>
+    <a class="item" href="/categories">
+      <i class="cube icon" title="All Categories"></i>
+    </a>
+  </div>
+</section>
+
+
+
+<section class="ui attached center aligned inverted segment dream-header-tags dream-tags">
+
+  
+  <a class="ui label" href="/tags/study" title="study">study</a>
+  
+  <a class="ui label" href="/tags/%E6%97%A5%E8%AE%B0" title="日记">日记</a>
+  
+  <a class="ui label" href="/tags/%E7%AC%94%E8%AE%B0" title="笔记">笔记</a>
+  
+  <a class="ui label" href="/tags/%E7%AE%97%E6%B3%95" title="算法">算法</a>
+  
+</section>
+
+
+
+
+
+<section class="ui bottom attached center aligned inverted segment">
+
+    
+    <p>© 2021 zxy的博客</p>
+    
+    <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with theme <a href="https://github.com/g1eny0ung/hugo-theme-dream" target="_blank">Dream</a>.</p>
+</section>
+
+
+  </div>
+</div>
+
+      </section>
+      <section class="back">
+        <nav class="ui top secondary menu" style="overflow-x: auto">
+  <div class="item">
+    <i class="inverted big link bullseye icon dream-flip-toggle" title="Flip it!"></i>
+  </div>
+  
+  
+  
+  
+  
+</nav>
+
+<div class="ui centered grid about">
+  <div class="fifteen wide mobile fifteen wide tablet fifteen wide computer column">
+
+    <section class="ui stacked segments">
+      
+      <header class="ui inverted segment">
+      
+        <h2 class="ui header">
+          About
+        </h2>
+      </header>
+
+      
+      <article class="ui inverted segment markdown-body">
+      
+        <div class="ui stackable three column grid">
+          <div class="column">
+              
+          </div>
+          <div class="column">
+              
+          </div>
+          <div class="column">
+              
+          </div>
+        </div>
+      </article>
+
+      
+      <footer class="ui secondary segment">
+        zxy
+      </footer>
+      
+
+      
+      
+    </section>
+
+  </div>
+</div>
+
+      </section>
+    </div>
+  </div>
+
+  
+<script src="/js/jquery.min.js"></script>
+<script src="/js/semantic.min.js"></script>
+<script src="/js/html2canvas.min.js"></script>
+<script src="/js/bg.js"></script>
+<script src="/js/site.js"></script>
+
+
+
+</body>
+
+</html>
