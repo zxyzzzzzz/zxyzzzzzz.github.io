@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>
-All Tags
+hugo使用
 </title>
 
   
@@ -21,7 +21,7 @@ All Tags
 <meta name="generator" content="Hugo 0.58.3" />
 
 
-<link rel="canonical" href="https://zxyzzzzzz.github.io/tags/" />
+<link rel="canonical" href="https://zxyzzzzzz.github.io/post/hugouse/" />
 <link rel="alternative" href="/index.xml" title="zxy的博客" type="application/atom+xml" />
 
 <link href="/css/semantic.min.css" rel="stylesheet" />
@@ -36,16 +36,83 @@ All Tags
     <div class="flipper">
       <section class="front">
         
-<nav class="ui top secondary menu" style="overflow-x: auto">
+<nav class="ui top secondary menu">
   <div class="item">
     <i class="inverted big link bullseye icon dream-flip-toggle" title="Flip it!"></i>
   </div>
   <div class="item">
-    <a href="/"><i class="inverted big link home icon" title="Home"></i></a>
+    <a href="/">
+      <i class="inverted big link home icon" title="Home"></i>
+    </a>
   </div>
 </nav>
  
 <div class="ui centered grid">
+  <div class="fifteen wide mobile fifteen wide tablet eleven wide computer column post-list post-single-main">
+
+    <section class="ui top attached segment">
+      <a class="ui black right corner label" href="javascript:void(0)" onclick="savePostAsImg()">
+        <i class="save icon"></i>
+      </a>
+      <header>
+        <h1 class="ui header">
+          hugo使用
+          <div class="sub header">@ zxy · Sep 12, 2021 · 1 min read · Update at Sep 12, 2021</div>
+        </h1>
+      </header>
+      <article class="markdown-body" style="margin-top: 2rem; font-size: 1.4rem;"><p>hugo new    post/“要写的博客的名字用.md后缀结尾” //新建文章</p>
+
+<p>git push //推送到服务器上
+git push -u origin master //通过登录的方式推送到服务器上仅在上一条无法用时使用</p>
+
+<p>tips
+hugo new site “站点名称”//生成一个新站点
+hugo server -t “dream”  &ndash;buildDrafts //在本地浏览器查看网页</p>
+
+<p>构建项目到public中用以下这条命令
+hugo &ndash;theme=dream &ndash;baseUrl=<a href="https://zxyzzzzzz.github.io/">https://zxyzzzzzz.github.io/</a> &ndash;buildDrafts</p>
+
+<p>关于GIT的一些指令
+git add .  （注意有个点号）将当前目录的文件提交到GIT的本地仓库中中
+git  commit -m &ldquo;《提交的备注在这里写》&rdquo;  将添加到本地仓库中的代码合并 并设置提交备注
+git push -u og master 将本地仓库代码推送到远端master分支上          （og是我最新设置的博客网址别名 )
+ps：如果git推送不成功可以考虑拖过去但可能会出错</p>
+
+<p>关于setting
+这个网站(<a href="https://blog.csdn.net/u013233097/article/details/80668351">https://blog.csdn.net/u013233097/article/details/80668351</a>)</p>
+
+<p>C:\Users\Administrator\Desktop\bb\themes\dream\layouts\partials\header.html 里面有关于头像的设置</p>
+
+<p>新增</p>
+
+<p>写正文前记得加上这个<!--more-->这个之前是网站的副标题 后面就是正文
+关于后续博客的参考可以在这个目录下找      C:\Users\Administrator\Desktop\bb\themes\dream\exampleSite\content\post
+关于md文件的语法可以在这个上面看 <a href="https://www.jianshu.com/p/191d1e21f7ed">https://www.jianshu.com/p/191d1e21f7ed</a>
+![图片描述]（图片链接）（之后可以在github上建立一个图片文件夹然后链接到上面）</p>
+
+<p>github官方的帮助
+<a href="https://www.sogou.com/link?url=hedJjaC291PA73d6Af3JeiWZf4X4kIqRPKDCK8TCu5bvWs1sOuYSzSquA4M83LfEG0zXIU7GOHG-vrQ-9eDaUBJcbEB7wthQD-8Rj8Gdshc">https://www.sogou.com/link?url=hedJjaC291PA73d6Af3JeiWZf4X4kIqRPKDCK8TCu5bvWs1sOuYSzSquA4M83LfEG0zXIU7GOHG-vrQ-9eDaUBJcbEB7wthQD-8Rj8Gdshc</a>.</p>
+
+<p>解决图片问题，直接同一目录用相对路径来找。</p></article>
+    </section>
+
+    <footer class="ui attached segment dream-tags">
+      
+      
+      <a class="ui label" href="/tags/%E7%AC%94%E8%AE%B0" title="笔记">笔记</a>
+      
+      
+    </footer>
+
+    
+    <footer class="ui attached segment">
+      zxy
+    </footer>
+    
+
+    
+
+  </div>
   <div class="fifteen wide mobile fifteen wide tablet four wide computer column">
 
     
@@ -111,80 +178,6 @@ All Tags
 
 
   </div>
-  <div class="fifteen wide mobile fifteen wide tablet eleven wide computer column post-list">
-    
-    <div class="ui inverted segment">
-    
-      <h2 class="ui header">
-        All Tags
-        <div class="ui grey sub header">
-          
-          4 tags
-          
-        </div>
-      </h2>
-
-      
-      
-      
-      <h3 class="ui header">
-          <a href="/tags/study/">study</a>
-          2 articles
-      </h3>
-      <ul>
-        
-        <li><a href="https://zxyzzzzzz.github.io/post/5.10/">增删改查</a></li>
-        
-        <li><a href="https://zxyzzzzzz.github.io/post/4.20/">Servlet学习笔记</a></li>
-        
-      </ul>
-      
-      
-      <h3 class="ui header">
-          <a href="/tags/%E6%97%A5%E8%AE%B0/">日记</a>
-          1 article
-      </h3>
-      <ul>
-        
-        <li><a href="https://zxyzzzzzz.github.io/post/back/">回来了</a></li>
-        
-      </ul>
-      
-      
-      <h3 class="ui header">
-          <a href="/tags/%E7%AC%94%E8%AE%B0/">笔记</a>
-          5 articles
-      </h3>
-      <ul>
-        
-        <li><a href="https://zxyzzzzzz.github.io/post/hugouse/">hugo使用</a></li>
-        
-        <li><a href="https://zxyzzzzzz.github.io/post/%E7%B4%A2%E5%BC%95%E4%BC%98%E5%8C%96/">索引优化</a></li>
-        
-        <li><a href="https://zxyzzzzzz.github.io/post/%E7%B4%A2%E5%BC%95%E5%9F%BA%E7%A1%80/">索引基础</a></li>
-        
-        <li><a href="https://zxyzzzzzz.github.io/post/sqlurl/">连接sql字符串的一些参数</a></li>
-        
-        <li><a href="https://zxyzzzzzz.github.io/post/java%E5%9B%9B%E7%A7%8D%E5%BC%95%E7%94%A8%E6%96%B9%E5%BC%8F/">JAVA四种引用方式</a></li>
-        
-      </ul>
-      
-      
-      <h3 class="ui header">
-          <a href="/tags/%E7%AE%97%E6%B3%95/">算法</a>
-          2 articles
-      </h3>
-      <ul>
-        
-        <li><a href="https://zxyzzzzzz.github.io/post/%E7%AE%80%E5%8D%95%E6%89%BE%E8%B7%AF/">简单找路</a></li>
-        
-        <li><a href="https://zxyzzzzzz.github.io/post/%E9%A1%BA%E5%BA%8F%E6%A0%88/">利用顺序栈进行简单的进制转换</a></li>
-        
-      </ul>
-      
-
-    </div>
-  </div>
 </div>
 
       </section>
@@ -235,7 +228,6 @@ All Tags
       
 
       
-        
       
     </section>
 

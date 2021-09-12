@@ -6,13 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>
-hugo安装博客的笔记
+
 </title>
 
   
   
   <meta name="author" content="zxy" />
-  <meta name="description" content="" />
+  <meta name="description" content="title: &amp;ldquo;hugo使用&amp;rdquo; date: 2021-09-11T14:47:47&#43;08:00 draft: true author: zxy tags : [ &amp;ldquo;日记&amp;rdquo; ]
+" />
 
 
 
@@ -56,44 +57,57 @@ hugo安装博客的笔记
       </a>
       <header>
         <h1 class="ui header">
-          hugo安装博客的笔记
-          <div class="sub header">@ zxy · Oct 2, 2019 · 1 min read · Update at Oct 2, 2019</div>
+          
+          <div class="sub header">@ zxy · Jan 1, 0001 · 1 min read · Update at Jan 1, 0001</div>
         </h1>
       </header>
-      <article class="markdown-body" style="margin-top: 2rem; font-size: 1.4rem;"><hr />
+      <article class="markdown-body" style="margin-top: 2rem; font-size: 1.4rem;"><p>title: &ldquo;hugo使用&rdquo;
+date:  2021-09-11T14:47:47+08:00
+draft:  true
+author:  zxy
+tags :  [
+&ldquo;日记&rdquo;
+]</p>
 
-<p>1.以后应该会用到的
-hugo new    post/“要写的博客的名字用.md后缀结尾” //新建文章
-hugo server -t “主题名称”&ndash;buildDrafts //在本地浏览器查看网页
-git remote add origin <a href="https://github.com/zxyzzzzzz/zxyzzzzzz.github.io.git">https://github.com/zxyzzzzzz/zxyzzzzzz.github.io.git</a>
-git push -u ori master  //这两条是推送到服务器上</p>
+<p>ugo new    post/“要写的博客的名字用.md后缀结尾” //新建文章</p>
 
-<p>2重装的时候会用吧
+<p>git push //推送到服务器上
+git push -u origin master //通过登录的方式推送到服务器上仅在上一条无法用时使用</p>
+
+<p>tips
 hugo new site “站点名称”//生成一个新站点
-hugo &ndash;theme=&ldquo;主题名称&rdquo; &ndash;baseUrl=&ldquo;https://&ldquo;站点名称&rdquo;.github.io/&rdquo; &ndash;buildDrafts</p>
+hugo server -t “dream”  &ndash;buildDrafts //在本地浏览器查看网页</p>
 
-<p>上传流程
-首先 hugo &ndash;theme=dream &ndash;baseUrl=&ldquo;<a href="https://zxyzzzzzz.github.io/&quot;">https://zxyzzzzzz.github.io/&quot;</a> &ndash;buildDrafts
-此时public文件夹创立了 我们需要进入 cd public
-进入后 git init (初始化)
-然后git add .（更新）
-接着 git commit -m &ldquo;第n次提交&rdquo;</p>
+<p>构建项目到public中用以下这条命令
+hugo &ndash;theme=dream &ndash;baseUrl=<a href="https://zxyzzzzzz.github.io/">https://zxyzzzzzz.github.io/</a> &ndash;buildDrafts</p>
 
-<p>git remote add origin <a href="https://github.com/zxyzzzzzz/zxyzzzzzz.github.io.git">https://github.com/zxyzzzzzz/zxyzzzzzz.github.io.git</a>
-此时就可以用上传到服务器上了</p>
+<p>关于GIT的一些指令
+git add .  （注意有个点号）将当前目录的文件提交到GIT的本地仓库中中
+git  commit -m &ldquo;《提交的备注在这里写》&rdquo;  将添加到本地仓库中的代码合并 并设置提交备注
+git push -u og master 将本地仓库代码推送到远端master分支上          （og是我最新设置的博客网址别名 )
+ps：如果git推送不成功可以考虑拖过去但可能会出错</p>
 
-<p>git push -u origin master</p>
+<p>关于setting
+这个网站(<a href="https://blog.csdn.net/u013233097/article/details/80668351">https://blog.csdn.net/u013233097/article/details/80668351</a>)</p>
 
-<p>二次上交有一个比较简单适合小白的方法就是把public删掉然后重新弄一个出来直接拖到库里覆盖</p>
+<p>C:\Users\Administrator\Desktop\bb\themes\dream\layouts\partials\header.html 里面有关于头像的设置</p>
 
-<p>hugo &ndash;theme=&ldquo;主题名称&rdquo; &ndash;baseUrl=&ldquo;https://&ldquo;站点名称&rdquo;.github.io/&rdquo; &ndash;buildDrafts</p></article>
+<p>新增</p>
+
+<p>写正文前记得加上这个<!--more-->这个之前是网站的副标题 后面就是正文
+关于后续博客的参考可以在这个目录下找      C:\Users\Administrator\Desktop\bb\themes\dream\exampleSite\content\post
+关于md文件的语法可以在这个上面看 <a href="https://www.jianshu.com/p/191d1e21f7ed">https://www.jianshu.com/p/191d1e21f7ed</a>
+![图片描述]（图片链接）（之后可以在github上建立一个图片文件夹然后链接到上面）</p>
+
+<p>github官方的帮助
+<a href="https://www.sogou.com/link?url=hedJjaC291PA73d6Af3JeiWZf4X4kIqRPKDCK8TCu5bvWs1sOuYSzSquA4M83LfEG0zXIU7GOHG-vrQ-9eDaUBJcbEB7wthQD-8Rj8Gdshc">https://www.sogou.com/link?url=hedJjaC291PA73d6Af3JeiWZf4X4kIqRPKDCK8TCu5bvWs1sOuYSzSquA4M83LfEG0zXIU7GOHG-vrQ-9eDaUBJcbEB7wthQD-8Rj8Gdshc</a>.</p>
+
+<p>解决图片问题，直接同一目录用相对路径来找。</p></article>
     </section>
 
     <footer class="ui attached segment dream-tags">
       
-      
-      <a class="ui label" href="/tags/study" title="Study">Study</a>
-      
+      <span>No Tags</span>
       
     </footer>
 
